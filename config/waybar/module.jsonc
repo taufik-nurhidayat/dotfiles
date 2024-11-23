@@ -1,0 +1,131 @@
+{
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": "",
+    },
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "on-scroll-up": "hyprctl dispatch workspace e-1",
+    "persistent-workspaces": {
+      "*": 5,
+    },
+  },
+
+  // Hyprland Window
+  "hyprland/window": {
+    "rewrite": {
+      "(.*) - Brave": "󰈹 [$1]",
+      "(.*) - Chromium": "󰈹 [$1]",
+      "(.*) - Brave Search": "󰈹 [$1]",
+      "(.*) - Outlook": "$1",
+      "(.*) Microsoft Teams": "$1",
+      "(.*) - Zen Browser": "󰈹 [$1]",
+    },
+    "max-length": 50,
+    "separate-outputs": true,
+  },
+  // taskbar
+  "wlr/taskbar": {
+    "format": " {icon} ",
+    "icon-size": 20,
+    "all-outputs": false,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "rofi",
+      "firefox",
+      "kitty",
+      "jetbrains-studio",
+      "Brave-browser",
+      "Spotify",
+    ],
+  },
+
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+  },
+  "mpris": {
+    "interval": 10,
+    "format": " {title}",
+    "format-paused": "{title} {status_icon}",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "scroll-step": 5.0,
+    "smooth-scrolling-threshold": 1,
+    "status-icons": {
+      "paused": "󰐎",
+      "playing": "🎶",
+      "stopped": "",
+    },
+    "max-length": 30,
+  },
+  "clock": {
+    "timezone": "Asia/Jakarta",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m/%Y}",
+    "format": " {:%H:%M}",
+    "on-click": "~/.config/eww/scripts/toggle_control_center.sh",
+  },
+  "backlight": {
+    "device": "input2::kana",
+    "format": "{icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-muted": "  ",
+    "format-icons": {
+      "default": [" ", " ", "  "],
+    },
+    "on-click": "pavucontrol",
+  },
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
+    "format": "",
+  },
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "wleave &",
+    "format": "",
+  },
+  "custom/picker": {
+    "tooltip": false,
+    "on-click": "hyprpicker -a",
+    "format": " ",
+  },
+  "custom/appmenu": {
+    "format": "󰣇",
+    "on-click": "rofi -show drun -replace",
+    "tooltip": false,
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": "",
+    },
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "   {signalStrength}%",
+    "format-ethernet": "  {ipaddr}",
+    "format-disconnected": "Not connected", //An empty format will hide the module.
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": "   {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "kitty -e nmtui",
+  },
+}

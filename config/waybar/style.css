@@ -1,0 +1,149 @@
+@import "mocha.css";
+
+@define-color backgroundlight #FFFFFF;
+@define-color backgrounddark #FFFFFF;
+@define-color workspacesbackground1 #FFFFFF;
+@define-color workspacesbackground2 #CCCCCC;
+@define-color bordercolor #FFFFFF;
+@define-color textcolor1 #000000;
+@define-color textcolor2 #000000;
+@define-color textcolor3 #FFFFFF;
+@define-color iconcolor #FFFFFF;
+
+* {
+  font-family: FantasqueSansMono Nerd Font;
+  font-size: 16px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  margin: 5px 0.5rem;
+  padding: 0px 1px;
+  border-radius: 0.75rem;
+  border: 0px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  color: @textcolor1;
+}
+
+#workspaces button {
+  padding: 0.35rem 1rem;
+  margin: 0 5px;
+  border-radius: 0.75rem;
+  border: 0px;
+  color: @textcolor3;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+  background: @mauve;
+}
+
+#workspaces button.active {
+  color: @crust;
+  background: @rosewater;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+#custom-music,
+#mpris,
+#tray,
+#backlight,
+#clock,
+#custom-picker,
+#custom-appmenu,
+#battery,
+#pulseaudio,
+#custom-lock,
+#network,
+/* #window, */
+#custom-power {
+  background-color: @surface0;
+  padding: 0.25rem 1rem;
+  margin: 5px 0;
+}
+
+#custom-appmenu {
+  margin-left: 1rem;
+  padding: 0.5rem 1.25rem 0.5rem 1rem;
+  border-radius: 0.75rem;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 0px 0.75rem 0.75rem 0px;
+  margin-right: 0.5rem;
+}
+
+#window {
+  margin-left: 1rem;
+  border-radius: 0.75rem;
+  color: @text;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#network {
+  color: @peach;
+}
+
+#mpris,
+#network,
+#battery {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  border-radius: 0;
+}
+
+#pulseaudio {
+  color: @maroon;
+  border-radius: 0.75rem 0px 0px 0.75rem;
+  margin-left: 0.5rem;
+}
+
+#custom-music,
+#mpris {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  color: @mauve;
+  border-radius: 0.75rem;
+}
+
+#custom-lock {
+  border-radius: 0.75rem 0px 0px 0.75rem;
+  color: @lavender;
+}
+
+#custom-picker {
+  padding-right: 0.65rem;
+  border-radius: 0.75rem;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  padding-right: 1.25rem;
+  padding-left: 0.24rem;
+  border-radius: 0px 0.75rem 0.75rem 0px;
+  color: @red;
+}
+
+#tray {
+  margin-right: 0.5rem;
+  border-radius: 0.75rem;
+}

@@ -1,0 +1,23 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  // "width": 1280, // Waybar width
+  // Choose the order of the modules
+
+  "include": ["~/.config/waybar/module.jsonc"],
+
+  "modules-left": ["custom/appmenu", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    // "keyboard-state",
+    "mpris",
+    "custom/picker",
+    "pulseaudio",
+    "backlight",
+    "network",
+    "clock",
+    "tray",
+    "custom/lock",
+    "custom/power",
+  ],
+}
